@@ -18,33 +18,14 @@ public:
 	Kafel(qint32 num,
 			QRgb col = qRgb(0, 255, 0),
 			QString lab = "",
-			QGraphicsItem *parent = nullptr)
-		: QGraphicsPixmapItem(parent),
-		label(lab),
-		number(num),
-		font("Comic Sans MS", 20)
-	{
-		kolor.setRgba(col);
-	}
+			QGraphicsItem *parent = nullptr);
 	
-	QRectF boundingRect() const
-	{
-		return QRectF(0, 0, Bok, Bok);
-	}
+	QRectF boundingRect() const;
 	
-	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
-	{
-		QGraphicsPixmapItem::paint(painter, option, widget);
-// 		painter->fillRect(0, 0, Bok, Bok, kolor);
-		painter->setFont(font);
-		painter->drawText(boundingRect(), Qt::AlignCenter, label);
-	}
+	void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget);
 	
-	
-	int Number() const 
-	{
-		return number;
-	}
+	qint32 Number() const;
+
 };
 
 

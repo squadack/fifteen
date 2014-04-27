@@ -1,5 +1,9 @@
 set (SOURCES
 	main.cpp
+	GraphicsView.cpp
+	Kafel.cpp
+	MyScene.cpp
+	MyWindow.cpp
 )
 
 set (HEADERS
