@@ -13,7 +13,7 @@ MyWindow::MyWindow(QWidget *parent)
 	QPushButton *buttonB = new QPushButton();
 	QPushButton *buttonC = new QPushButton();
 	buttonA->setText("&Check");
-	buttonB->setText("&Rotate");
+	buttonB->setText("&Start");
 	buttonC->setText("E&xit");
 	buttonLayout->addWidget(buttonA);
 	buttonLayout->addWidget(buttonB);
@@ -34,7 +34,13 @@ MyWindow::MyWindow(QWidget *parent)
 	this->menuBar()->addMenu(menuA);
 	
 	GraphicsView *view = new GraphicsView();
-	connect(buttonB, SIGNAL(clicked()), view, SLOT(Rotate()));
+	
+	timer = new QTimer();
+	timer->setInterval(1000);
+	
+	connect(buttonB, SIGNAL(clicked()), timer, SLOT(start()));
+	connect(timer, SIGNAL(timeout()), view, SLOT(Rotate()));
+	
 	MyScene *scene = new MyScene();
 	connect(buttonA, SIGNAL(clicked()), scene, SLOT(check()));
 	view->setScene(scene);
@@ -42,4 +48,9 @@ MyWindow::MyWindow(QWidget *parent)
 	layout->addLayout(buttonLayout);
 	
 	central->setLayout(layout);
+}
+
+MyWindow::~MyWindow()
+{
+	delete timer;
 }

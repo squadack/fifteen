@@ -12,6 +12,9 @@ class MyWindow : public QMainWindow
 	Q_OBJECT;
 public:
 	MyWindow(QWidget *parent = nullptr);
+	~MyWindow();
+private:
+	QTimer *timer;
 };
 
 #endif
