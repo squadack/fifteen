@@ -1,4 +1,8 @@
 #include "MyWindow.h"
+#include <QBoxLayout>
+#include <QPushButton>
+#include <QMenu>
+#include <QMenuBar>
 
 MyWindow::MyWindow(QWidget *parent)
 	:QMainWindow(parent)

@@ -4,6 +4,7 @@
 #include <QtGui>
 #include <QString>
 #include <QColor>
+#include <QGraphicsPixmapItem>
 
 class Kafel : public QGraphicsPixmapItem
 {

@@ -2,6 +2,7 @@
 #define GRAPHICSVIEW_H
 
 #include <QtGui>
+#include <QGraphicsView>
 
 class GraphicsView : public QGraphicsView
 {

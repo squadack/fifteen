@@ -4,6 +4,7 @@
 #include <QtGui>
 #include <QDebug>
 #include <QAction>
+#include <QMainWindow>
 #include "MyScene.h"
 #include "GraphicsView.h"
 

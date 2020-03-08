@@ -2,6 +2,7 @@
 #define MYSCENE_H
 
 #include <QtGui>
+#include <QGraphicsScene>
 #include "Kafel.h"
 
 class MyScene : public QGraphicsScene
